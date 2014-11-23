@@ -1,0 +1,19 @@
+<div class="col-md-12 dashboard">
+This is the dashboard view.
+
+  <!--User: {{user}}-->
+
+  <div class="row">
+    <div ng-repeat="budget in budgets" class="col-md-4">
+      <div class="budget">
+        {{budget.name}}
+
+        <div status-bar="budget"></div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <button class="btn btn-primary" ng-click="createModel()">Create Budget</button>
+</div>

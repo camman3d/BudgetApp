@@ -1,5 +1,4 @@
 # Budget App
 
-<a href="https://waffle.io/camman3d/BudgetApp"><img src="https://badge.waffle.io/camman3d/BudgetApp.png" alt="Issues on waffle.io"/></a>
-
-<a href="https://travis-ci.org/camman3d/BudgetApp"><img src="https://travis-ci.org/camman3d/BudgetApp.svg" alt="Build status on Travis CI" /></a>
+[![Stories in Ready](https://badge.waffle.io/camman3d/BudgetApp2.svg?label=ready&title=Ready)](http://waffle.io/camman3d/BudgetApp2)
+[![Build Status](https://travis-ci.org/camman3d/BudgetApp2.svg?branch=master)](https://travis-ci.org/camman3d/BudgetApp2)
