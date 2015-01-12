@@ -16,7 +16,7 @@ var BudgetSchema = new Schema({
     timeUnit: String
   },
   entries: [{
-    name: String,
+    description: String,
     date: String,
     amount: Number
   }]
