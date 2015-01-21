@@ -49,6 +49,6 @@ User.find({}).remove(function() {
   );
 });
 
-Budget.find({}, function (err, docs) {
-  console.log(docs);
+Budget.find({}).remove(function () {
+  console.log('removed budgets');
 });

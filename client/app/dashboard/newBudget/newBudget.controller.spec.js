@@ -8,14 +8,14 @@ describe('Controller: NewbudgetCtrl', function () {
   var NewbudgetCtrl, scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    NewbudgetCtrl = $controller('NewbudgetCtrl', {
-      $scope: scope
-    });
-  }));
+  //beforeEach(inject(function ($controller, $rootScope) {
+  //  scope = $rootScope.$new();
+  //  NewbudgetCtrl = $controller('NewbudgetCtrl', {
+  //    $scope: scope
+  //  });
+  //}));
 
-  it('should ...', function () {
-    expect(1).toEqual(1);
-  });
+  //it('should ...', function () {
+  //  expect(1).toEqual(1);
+  //});
 });

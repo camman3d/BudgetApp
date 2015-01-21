@@ -22,17 +22,17 @@ var BudgetSchema = new Schema({
   }]
 });
 
-BudgetSchema
-  .virtual('fullname')
-  .get(function() {
-    // TODO: Add moment.js and do real stuff
-    //var spent = Math.random() * 1.3 * this.amount;
-    //return {
-    //  spent: spent,
-    //  percent: (spent / this.amount) * 100
-    //};
-
-    //return 'Jim';
-  });
+//BudgetSchema
+//  .virtual('fullname')
+//  .get(function() {
+//    // TODO: Add moment.js and do real stuff
+//    //var spent = Math.random() * 1.3 * this.amount;
+//    //return {
+//    //  spent: spent,
+//    //  percent: (spent / this.amount) * 100
+//    //};
+//
+//    //return 'Jim';
+//  });
 
 module.exports = mongoose.model('Budget', BudgetSchema);

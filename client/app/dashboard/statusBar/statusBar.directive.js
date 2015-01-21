@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('budgetApp2App')
-  .directive('statusBar', function () {
+  .directive('statusBar', function (BudgetAnalyzer) {
     return {
       templateUrl: 'app/dashboard/statusBar/statusBar.html',
       restrict: 'EA',
@@ -10,13 +10,20 @@ angular.module('budgetApp2App')
       },
       link: function (scope, element, attrs) {
 
-        scope.progressState = {
-          'progress-bar-success': scope.budget.status.state == 'green',
-          'progress-bar-warning': scope.budget.status.state == 'yellow',
-          'progress-bar-danger': scope.budget.status.state == 'red'
-        };
+        function process() {
+          scope.status = BudgetAnalyzer.analyze(scope.budget);
 
-        scope.progressWidth = Math.min(100, scope.budget.status.percent);
+          scope.progressState = {
+            'progress-bar-success': scope.status.state == 'green',
+            'progress-bar-warning': scope.status.state == 'yellow',
+            'progress-bar-danger': scope.status.state == 'red'
+          };
+
+          scope.progressWidth = Math.min(100, scope.status.percent * 100);
+        }
+
+        scope.$watch('budget.entries', process);
+        process();
 
       }
     };

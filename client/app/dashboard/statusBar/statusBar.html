@@ -1,6 +1,10 @@
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="{{budget.status.percent}}" aria-valuemin="0" aria-valuemax="100"
-       style="width: {{progressWidth}}%;" ng-class="progressState">
-    {{budget.status.spent | currency}} / {{budget.amount | currency}}
+<div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{status.percent}}" aria-valuemin="0" aria-valuemax="100"
+         style="width: {{progressWidth}}%;" ng-class="progressState">
+      {{status.spent | currency}} / {{budget.amount | currency}}
+    </div>
   </div>
+  <div>Time left: <strong>{{status.timeLeft}}</strong></div>
+  <div>Money left: <strong>{{status.moneyLeft | currency}}</strong></div>
 </div>

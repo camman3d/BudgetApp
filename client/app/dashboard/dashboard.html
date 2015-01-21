@@ -1,22 +1,24 @@
-<div class="col-md-12 dashboard">
-This is the dashboard view.
+<div ng-include="'components/navbar/navbar.html'"></div>
 
-  <!--User: {{user}}-->
+<div class="container">
+  <div class="col-md-12 dashboard">
+    <button class="btn btn-success" ng-click="createModel()">Create Budget</button>
 
-  <div class="row">
-    <div ng-repeat="budget in budgets" class="col-md-4">
-      <div class="budget">
-        {{budget.name}}
+    <div class="row">
+      <div ng-repeat="budget in budgets" class="col-md-4">
+        <div class="budget">
+          <h2>{{budget.name}}</h2>
 
-        <div status-bar="budget"></div>
+          <div status-bar="budget"></div>
 
-        <button class="btn btn-primary" ng-click="addEntry(budget)">Add</button>
+          <div class="margin-top-md">
+            <button class="btn btn-primary" ng-click="addEntry(budget)">Enter Expense</button>
+            <a href="#"><i class="fa-trash red"></i></a>
+          </div>
 
-        {{budget}}
+        </div>
       </div>
     </div>
+
   </div>
-
-
-  <button class="btn btn-primary" ng-click="createModel()">Create Budget</button>
 </div>

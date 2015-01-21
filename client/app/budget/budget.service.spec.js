@@ -6,13 +6,13 @@ describe('Service: budget', function () {
   beforeEach(module('budgetApp2App'));
 
   // instantiate service
-  var budget;
-  beforeEach(inject(function (_budget_) {
-    budget = _budget_;
+  var Budget;
+  beforeEach(inject(function (_Budget_) {
+    Budget = _Budget_;
   }));
 
   it('should do something', function () {
-    expect(!!budget).toBe(true);
+    expect(!!Budget).toBe(true);
   });
 
 });

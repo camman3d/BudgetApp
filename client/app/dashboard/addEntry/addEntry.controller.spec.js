@@ -8,14 +8,14 @@ describe('Controller: AddentryCtrl', function () {
   var AddentryCtrl, scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    AddentryCtrl = $controller('AddentryCtrl', {
-      $scope: scope
-    });
-  }));
+  //beforeEach(inject(function ($controller, $rootScope) {
+  //  scope = $rootScope.$new();
+  //  AddentryCtrl = $controller('AddentryCtrl', {
+  //    $scope: scope
+  //  });
+  //}));
 
-  it('should ...', function () {
-    expect(1).toEqual(1);
-  });
+  //it('should ...', function () {
+  //  expect(1).toEqual(1);
+  //});
 });

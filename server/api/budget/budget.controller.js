@@ -3,7 +3,6 @@
 var _ = require('lodash');
 var Budget = require('./budget.model');
 var config = require('../../config/environment');
-var budgetAnalyzer = require('./budgetAnalyzer');
 
 function isOwner(user, budget) {
   return user._id == budget.userId;
@@ -25,9 +24,6 @@ exports.index = function (req, res) {
     if (err) {
       return handleError(res, err);
     }
-    budgets.forEach(function (budget) {
-      budget._doc.status = budgetAnalyzer.calcStatus(budget);
-    });
     return res.json(200, budgets);
   });
 };
@@ -44,7 +40,6 @@ exports.show = function (req, res) {
     if (!budget) {
       return res.send(404);
     }
-    budgetAnalyzer.addStatus(budget);
     return res.json(budget);
   });
 };
@@ -59,7 +54,6 @@ exports.create = function (req, res) {
     if (err) {
       return handleError(res, err);
     }
-    budgetAnalyzer.addStatus(budget);
     return res.json(201, budget);
   });
 };
@@ -79,12 +73,15 @@ exports.update = function (req, res) {
     if (!budget) {
       return res.send(404);
     }
+
+    // Merge the documents, but use the updated entries
     var updated = _.merge(budget, req.body);
+    updated.entries = req.body.entries;
+
     updated.save(function (err) {
       if (err) {
         return handleError(res, err);
       }
-      budgetAnalyzer.addStatus(budget);
       return res.json(200, budget);
     });
   });

@@ -25,7 +25,7 @@ angular.module('budgetApp2App')
         controller: 'AddentryCtrl'
       }).result.then(function (entry) {
         budget.entries.push(entry);
-        budget.$save();
+        budget.$update();
       });
     };
 
